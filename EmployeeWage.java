@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class EmployeeWage{
 
-	  private static Byte empRatePerHr = 20;    //declaring the constants
+	private static Byte empRatePerHr = 20;    //declaring the constants
 	  private static Byte fullTimeHrs = 8;
 	  private static Byte partTimeHrs = 4;
 
@@ -17,7 +17,7 @@ public class EmployeeWage{
 
 	  private static String checkAttendance() {
 	    Random random = new Random();
-	    int randomNum = random.nextInt(0);
+	    int randomNum = random.nextInt();
 
 	    switch (randomNum) {
 	      case 1:
@@ -53,7 +53,7 @@ public class EmployeeWage{
 	    while (daysWorked < 20 && hoursWorked < 100) {
 	      int dailyWage = getDailyWage(); //getting employee's daily wage for each day
 
-	      String str = (dailyWage == 0) ? "absent" : dailyWage /EmployeeWage.empRatePerHr == EmployeeWage.fullTimeHrs ? "full time" : "part time";
+	      String str = (dailyWage == 0) ? "absent" : dailyWage / EmployeeWage.empRatePerHr == EmployeeWage.fullTimeHrs ? "full time" : "part time";
 
 	      switch (str) {
 	        case "full time":
@@ -72,5 +72,6 @@ public class EmployeeWage{
 	    monthlyWage= hoursWorked * EmployeeWage.empRatePerHr;
 
 	    return monthlyWage;
+
 	 }
 }
